@@ -1,0 +1,27 @@
+   <div ng-controller="AdminCtrl as admin">
+   <div class="row">
+            <div class="col-xs-6">
+                <input type="text" class="form-control" ng-model="admin.task">
+            </div>
+            <div ng-if="!admin.editMode" class="col-xs-3">
+                <button class="btn btn-primary btn-block" ng-click="admin.task && admin.add(admin.task)">Add Task</button>
+            </div>
+            <div ng-if ="admin.editMode" class="col-xs-3">
+                <button class="btn btn-warning btn-block" ng-click="admin.update(admin.task)">Update Task</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                 <p>  Task = {{admin.completed}}/{{admin.tasks.length}}</p>
+                <ul  class="list-group">
+                    <li class="list-group-item" ng-class="{'list-group-item-success':task.status,'list-group-item-danger':!task.status}" ng-repeat="task in admin.tasks">
+                     <span ng-class="{'done':task.status}">contact:{{task.contact}} name:{{task.name}} table:{{task.tableno}} total:{{task.total}} </span> <button class="btn btn-danger" ng-click="admin.delete($index)">Delete</button>
+                 <button class="btn" ng-class="{'btn-success':!task.status,'btn-warning':task.status}" ng-click="admin.changeStatus($index)">{{task.status?'Undo':'Done'}}</button>
+                 <button class="btn btn-info" ng-click="admin.edit($index)">Edit</button>
+
+                 </li>
+                </ul>
+            </div>
+        </div>            
+   </div>

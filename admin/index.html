@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap.css">
+        <script src="angular.js"></script>
+        <script src="angular-route.js"></script>
+        <script src="app.js"></script>
+          <script src="firebase.js"></script>
+   <script>
+       var config = {
+    apiKey: "AIzaSyDJtyxqnR58J6AwXf7uvlVuBGuKZ2JXqLU",
+    authDomain: "hungerfood-d910c.firebaseapp.com",
+    databaseURL: "https://hungerfood-d910c.firebaseio.com",
+    projectId: "hungerfood-d910c",
+    storageBucket: "hungerfood-d910c.appspot.com",
+    messagingSenderId: "276922464371"
+  };
+  firebase.initializeApp(config);
+     </script>
+    <script src="angularfire.js"></script>
+    </head>
+    <body>
+      <div ng-app="Adminp">
+      <ng-view>
+          
+      </ng-view>
+      </div>
+      
+   
+ 
+    </body>
+</html>
